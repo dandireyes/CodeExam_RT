@@ -13,8 +13,4 @@ public class CustomerConfiguration {
         return new CustomerService();
     }
 
-    @Bean
-    public ModelMapper modelMapperBean(){
-        return new ModelMapper();
-    }
 }

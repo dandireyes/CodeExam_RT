@@ -49,6 +49,10 @@ public class Customer {
         return customerNumber;
     }
 
+    public void setCustomerNumber(int customerNumber) {
+        this.customerNumber = customerNumber;
+    }
+
     public String getCustomerName() {
         return customerName;
     }

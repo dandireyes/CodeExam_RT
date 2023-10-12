@@ -19,12 +19,12 @@ public class CustomerService {
     @Autowired
     private CustomerRepo customerRepo;
 
-    @Autowired
-    private ModelMapper mapper;
+    private ModelMapper mapper = new ModelMapper();
 
     public CustomerSingleResponseSuccess getCustomerByNumber(int customerNumber) {
 
         Optional<Customer> customer = customerRepo.findById(customerNumber);
+
         CustomerSingleResponseSuccess customerSingleResponse = mapper.map(customer, CustomerSingleResponseSuccess.class);
         return customerSingleResponse;
 
@@ -63,6 +63,24 @@ public class CustomerService {
             return customerCreateFailResponse;
         }
     }
+
+
+    public CustomerRepo getCustomerRepo() {
+        return customerRepo;
+    }
+
+    public void setCustomerRepo(CustomerRepo customerRepo) {
+        this.customerRepo = customerRepo;
+    }
+
+    public ModelMapper getMapper() {
+        return mapper;
+    }
+
+    public void setMapper(ModelMapper mapper) {
+        this.mapper = mapper;
+    }
+
 
 
 }
